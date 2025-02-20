@@ -4,10 +4,10 @@ import com.ark.eatloop.domain.model.User
 
 interface UserRepository {
 
-    fun getUserById(): User
+    fun getUserById(id: String): User?
 
-    fun getUserByEmail(email: String): User
+    fun getUserByEmail(email: String): User?
 
-    fun createUser(user: User): User
+    fun createUser(user: User): User?
 
 }

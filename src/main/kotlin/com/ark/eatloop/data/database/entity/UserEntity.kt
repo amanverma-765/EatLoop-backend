@@ -1,19 +1,18 @@
 package com.ark.eatloop.data.database.entity
 
-import com.ark.eatloop.domain.enum.Country
-import com.ark.eatloop.domain.enum.Currency
-import org.springframework.boot.autoconfigure.domain.EntityScan
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
+import java.time.Instant
 
-
+@Document(collection = "users")
 data class UserEntity(
-    val id: Long?,
+    @Id
+    val id: String?,
     val email: String,
     val firstName: String,
     val lastName: String,
     val gender: String,
     val mobileNumber: String,
-    val countryCode: String,
-    val country: Country,
     val password: String,
-    val currency: Currency
+    val createdAt: Instant = Instant.now(),
 )

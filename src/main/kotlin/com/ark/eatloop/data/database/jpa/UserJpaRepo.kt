@@ -1,8 +1,11 @@
 package com.ark.eatloop.data.database.jpa
 
-import org.springframework.stereotype.Repository
+import com.ark.eatloop.data.database.entity.UserEntity
+import org.springframework.data.mongodb.repository.MongoRepository
+import java.util.Optional
 
-@Repository
-interface UserJpaRepo {
+interface UserJpaRepo: MongoRepository<UserEntity, String> {
+
+    fun findByEmail(email: String): Optional<UserEntity>
 
 }

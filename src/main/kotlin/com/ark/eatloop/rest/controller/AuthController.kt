@@ -25,10 +25,8 @@ class AuthController(private val authService: AuthService) {
 
     @PostMapping("/signup")
     fun createNewAccount(@RequestBody requestBody: SignupRequest): ResponseEntity<SignupResponse> {
-        val response = authService.handleUserRegistration(requestBody.toUser { accepted ->
-            if (accepted.not()) throw RuntimeException("User should accept our T&C")
-        })
-        return ResponseEntity.ok(response.toSignupResponse(""))
+        val response = authService.handleUserRegistration(requestBody.toUser())
+        return ResponseEntity.ok(response.toSignupResponse("iasediuuysadhfhhksdhf"))
     }
 
     @PostMapping("/login")
