@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+      port: 35729
+  application:
+    name: EatLoop
+  data:
+    mongodb:
+      password: admin
+      username: admin
+      host: localhost
+      port: 27020
+      database: eatloop

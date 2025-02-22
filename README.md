@@ -20,8 +20,8 @@ This project is a backend service for a food delivery application built with Spr
 
 ### Prerequisites
 - **Java 21**
-- **Kotlin 2.0**
+- **Kotlin 1.9.24**
 - **Gradle**
-- PostgreSQL A relational database
-- Docker
+- **PostgreSQL** A relational database
+- **Docker**
 

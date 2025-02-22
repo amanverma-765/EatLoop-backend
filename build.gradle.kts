@@ -5,40 +5,42 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "com.eatloop"
-version = "0.0.1-SNAPSHOT"
+allprojects {
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+    group = "com.coupit"
+    version = "1.0.0"
+
+    repositories {
+        mavenCentral()
     }
+
 }
 
-repositories {
-    mavenCentral()
-}
+subprojects {
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "org.springframework.boot")
+    apply(plugin = "io.spring.dependency-management")
 
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testImplementation("org.springframework.security:spring-security-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    implementation("com.auth0:java-jwt:4.4.0")
-}
-
-kotlin {
-    compilerOptions {
-        freeCompilerArgs.addAll("-Xjsr305=strict")
+    dependencies {
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+        developmentOnly("org.springframework.boot:spring-boot-docker-compose")
     }
-}
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+    kotlin {
+        compilerOptions {
+            freeCompilerArgs.addAll("-Xjsr305=strict")
+        }
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
 }
