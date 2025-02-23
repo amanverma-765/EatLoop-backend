@@ -1,17 +1,12 @@
 package com.eatloop.rest.dto.menu
 
 import com.eatloop.enum.FoodCategory
-import java.time.Instant
 
-data class MenuItemResponse(
-    val id: String?,
+data class MenuItemRequest(
     val name: String,
     val description: String,
     val price: Double,
-    val imageUrl: String,
     val category: FoodCategory,
     val stock: Int,
-    val rating: Double,
-    val numberOfRatings: Int,
-    val updatedAt: Instant
+    val imageUrl: String
 )

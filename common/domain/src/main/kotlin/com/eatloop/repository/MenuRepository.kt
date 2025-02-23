@@ -23,7 +23,7 @@ interface RestaurantMenuRepository {
 
     fun addNewMenuItem(menuItem: MenuItem): MenuItem
 
-    fun updateMenuItem(menuItem: MenuItem): MenuItem
+    fun updateMenuItem(id: String, menuItem: MenuItem): MenuItem
 
     fun deleteMenuItem(id: String): Boolean
 

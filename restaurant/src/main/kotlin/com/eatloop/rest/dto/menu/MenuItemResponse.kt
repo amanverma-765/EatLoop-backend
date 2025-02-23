@@ -1,9 +1,9 @@
-package com.eatloop.model
+package com.eatloop.rest.dto.menu
 
 import com.eatloop.enum.FoodCategory
 import java.time.Instant
 
-data class MenuItem(
+data class MenuItemResponse(
     val id: String?,
     val name: String,
     val description: String,
@@ -11,7 +11,6 @@ data class MenuItem(
     val imgUrl: String,
     val category: FoodCategory,
     val stock: Int,
-    val restaurantId: String,
     val rating: Double,
     val numberOfRatings: Int,
     val updatedAt: Instant

@@ -1,7 +1,9 @@
 package com.eatloop.entity
 
+import com.eatloop.enum.FoodCategory
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
+import java.time.Instant
 
 
 @Document(collection = "menu_items")
@@ -12,10 +14,10 @@ data class MenuItemEntity(
     val description: String,
     val price: Double,
     val imageUrl: String,
-    val category: String,
+    val category: FoodCategory,
     val stock: Int,
     val restaurantId: String,
-    val rating: Double,
-    val numberOfRatings: Int,
-    val updatedAt: Long
+    val rating: Double = 0.0,
+    val numberOfRatings: Int = 0,
+    val updatedAt: Instant = Instant.now()
 )

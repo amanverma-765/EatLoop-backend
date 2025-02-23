@@ -10,13 +10,10 @@ object MenuEntityMapper {
         name = this.name,
         description = this.description,
         price = this.price,
-        imageUrl = this.imageUrl,
+        imageUrl = this.imgUrl,
         category = this.category,
         stock = this.stock,
         restaurantId = this.restaurantId,
-        rating = this.rating,
-        numberOfRatings = this.numberOfRatings,
-        updatedAt = this.updatedAt
     )
 
     fun MenuItemEntity.toDomain() = MenuItem(
@@ -24,7 +21,7 @@ object MenuEntityMapper {
         name = this.name,
         description = this.description,
         price = this.price,
-        imageUrl = this.imageUrl,
+        imgUrl = this.imageUrl,
         category = this.category,
         stock = this.stock,
         restaurantId = this.restaurantId,
